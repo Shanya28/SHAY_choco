@@ -15,7 +15,7 @@ jobs:
   check_coding_style:
     name: Check Coding Style
     runs-on: ubuntu-latest
-    if: "!startsWith(github.ref_name, 'ga-ignore-') && github.repository != env.MIRROR_URL"
+    if: "!startsWith(github.ref_name, 'ga-ignore-') && github.repository != ${{ env.MIRROR_URL }}"
     container: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: Checkout Repository
