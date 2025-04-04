@@ -17,7 +17,7 @@ int my_strlen(char const *str)
     return (x);
 }
 
-int main()
+int main(void)
 {
     printf("%d\n", my_strlen("Annaelle"));
 }
