@@ -78,6 +78,20 @@ jobs:
       - name: Run Tests
         run: timeout 120 make tests_run || { echo "::error::Tests failed"; exit 1; }
 
+  check_banned_functions:
+    runs-on: ubuntu-latest
+    needs: check_coding_style
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Scan for banned functions
+        run: |
+          grep -rnE "\b(${{ env.BANNED_FUNCTIONS }})\b" --include=\*.c || true
+          if grep -rnE "\b(${{ env.BANNED_FUNCTIONS }})\b" --include=\*.c; then
+            echo "::error::Banned function usage detected"
+            exit 1
+          fi
+
   push_to_mirror:
     runs-on: ubuntu-latest
     needs: run_tests
