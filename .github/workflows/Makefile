@@ -1,0 +1,23 @@
+##
+## EPITECH PROJECT, 2024
+## make
+## File description:
+## file
+##
+SRC	=	*.c
+
+NAME	=	shay
+
+all:
+	gcc $(SRC) -o $(NAME)
+
+clean:
+	rm -f *#
+	rm -f *~
+
+fclean:
+	rm -f $(NAME)
+	rm -f *#
+	rm -f *~
+
+re:	fclean all
