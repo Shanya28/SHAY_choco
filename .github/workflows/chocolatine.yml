@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - "**"
+env:
+  MIRROR_URL: "git@github.com:Epitech-Mirror-Repo.git"
+  EXECUTABLES: "mysh"
 
 jobs:
   check_coding_style:
@@ -96,7 +99,3 @@ jobs:
         with:
           target_repo_url: ${{ env.MIRROR_URL }}
           ssh_private_key: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
-
-env:
-  MIRROR_URL: "git@github.com:Epitech-Mirror-Repo.git"
-  EXECUTABLES: "mysh"
