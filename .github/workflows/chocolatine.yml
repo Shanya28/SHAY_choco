@@ -11,7 +11,7 @@ on:
 env:
   MIRROR_URL: "git@github.com:EpitechPGEPromo2029/B-MAT-200-COT-2-1-108trigo-shanya.oniloude.git"
   EXECUTABLES: "shay"
-  BANNED_FUNCTIONS: "printf" 
+  BANNED_FUNCTIONS: "puts" 
 
 jobs:
   check_coding_style:
